@@ -3,168 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahadev Fabric Care</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f9fc;
-        }
-
-        header {
-            width: 100%;
-            padding: 20px 0;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        nav a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 150px 20px 60px;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 15px auto;
-            color: #444;
-        }
-
-        .qr-box {
-            background: white;
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .services-box {
-            background: white;
-            max-width: 600px;
-            margin: 25px auto;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px;
-            color: #555;
-        }
-    </style>
+    <title>Royal Cleaning Services</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<header>
-    <div class="header-container">
+<!-- =============================== -->
+<!--            HEADER               -->
+<!-- =============================== -->
 
-        <div>
-            <h2 style="margin:0; font-weight:700;">MFC</h2>
-            <p style="margin:0; font-size:12px; color:#666;">
-                Mahadev Fabric Care
-            </p>
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="book.html">Book</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-        </nav>
-
-    </div>
+<header class="header">
+    <nav class="navbar">
+        <div class="logo">Royal Cleaning</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
+<!-- =============================== -->
+<!--            HERO SECTION         -->
+<!-- =============================== -->
 
-<!-- ============ HERO SECTION ============ -->
-<div class="hero">
-    <h1>Revive your fabrics.<br>Restore their shine.</h1>
-    <p>
-        Premium, reliable, and eco-friendly fabric care.  
-        Request a quotation and we'll send a tailored price  
-        via WhatsApp or email.
-    </p>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Premium Home & Office Cleaning</h1>
+        <p>Professional, affordable & reliable cleaning services across the city.</p>
 
-    <a href="book.html"
-       style="display:inline-block; margin:15px; padding:12px 22px; background:#000; color:white;
-              border-radius:8px; text-decoration:none;">
-        Request Service
-    </a>
+        <div class="hero-buttons">
+            <a href="#services" class="btn-primary">View Services</a>
+            <a href="#contact" class="btn-secondary">Book Now</a>
+        </div>
+    </div>
+</section>
+<!-- =============================== -->
+<!--          SERVICES SECTION       -->
+<!-- =============================== -->
 
-    <a href="services.html"
-       style="display:inline-block; margin:15px; padding:12px 22px; background:#444; color:white;
-              border-radius:8px; text-decoration:none;">
-        Our Services
-    </a>
-</div>
+<section id="services" class="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services-container">
+
+        <!-- Sofa Cleaning -->
+        <div class="service-box">
+            <img src="images/sofa.jpg" class="service-img">
+            <h3>Sofa Cleaning</h3>
+            <p>Deep shampoo + foam scrubbing + stain removal + freshening.</p>
+            <a href="services.html#sofa" class="service-btn">Learn More</a>
+        </div>
+
+        <!-- Carpet Cleaning -->
+        <div class="service-box">
+            <img src="images/carpet.jpg" class="service-img">
+            <h3>Carpet Cleaning</h3>
+            <p>Industrial machine cleaning • Dust extraction • Shampoo deep clean.</p>
+            <a href="services.html#carpet" class="service-btn">Learn More</a>
+        </div>
+
+        <!-- Nano Coating -->
+        <div class="service-box">
+            <img src="images/nano.jpg" class="service-img">
+            <h3>Nano Coating</h3>
+            <p>Advanced fabric protection • Water-repellent • Stain guard coating.</p>
+            <a href="services.html#nano" class="service-btn">Learn More</a>
+        </div>
+
+        <!-- Steam Cleaning -->
+        <div class="service-box">
+            <img src="images/steam.jpg" class="service-img">
+            <h3>Steam Cleaning</h3>
+            <p>Kills 99.9% bacteria • Chemical-free sanitization • Deep refresh.</p>
+            <a href="services.html#steam" class="service-btn">Learn More</a>
+        </div>
+
+    </div>
+</section>
+<!-- =============================== -->
+<!--        WHY CHOOSE US            -->
+<!-- =============================== -->
+
+<section id="about" class="why-us">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+            <img src="icons/professional.png" class="why-icon">
+            <h3>Professional Experts</h3>
+            <p>Trained technicians with high-grade equipment for flawless results.</p>
+        </div>
+
+        <div class="why-box">
+            <img src="icons/eco.png" class="why-icon">
+            <h3>Eco-Friendly Products</h3>
+            <p>Safe for kids, pets & sensitive fabrics using non-toxic solutions.</p>
+        </div>
+
+        <div class="why-box">
+            <img src="icons/quick.png" class="why-icon">
+            <h3>Quick & Reliable</h3>
+            <p>On-time service with smooth booking & fast execution.</p>
+        </div>
+
+        <div class="why-box">
+            <img src="icons/quality.png" class="why-icon">
+            <h3>Quality Guaranteed</h3>
+            <p>Premium finishing • Stain removal • Long-lasting freshness.</p>
+        </div>
+
+    </div>
+</section>
+<!-- =============================== -->
+<!--          CONTACT US             -->
+<!-- =============================== -->
+
+<section id="contact" class="contact-section">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-container">
+
+        <!-- Left Side -->
+        <div class="contact-details">
+            <h3>📞 Reach Us</h3>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">Chat on WhatsApp</a></p>
+            <p><strong>Email:</strong> support@furnifresh.com</p>
+
+            <h3>📍 Service Location</h3>
+            <p>Mumbai • Thane • Navi Mumbai</p>
+
+            <h3>⏱ Working Hours</h3>
+            <p>Monday – Sunday<br>8:00 AM – 10:00 PM</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="payment-box">
+            <h3>💳 Quick Payment</h3>
+            <img src="images/paymentQR.png" alt="UPI Payment QR" class="qr-img">
+            <p>Scan & Pay using UPI</p>
+
+            <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
+                WhatsApp Now
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- =============================== -->
+<!--        WHATSAPP FLOATING BTN    -->
+<!-- =============================== -->
+
+<a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank">
+    <img src="icons/whatsapp.png" alt="WhatsApp">
+</a>
 
 
-<!-- ============ QR PAYMENT BOX ============ -->
-<div class="qr-box">
-    <img src="qr.png" alt="QR" style="width:120px; margin-bottom:15px;">
-    <h3>Scan to Pay</h3>
-    <p style="font-size:14px; color:#444;">
-        UPI: celebrateentertainmentguy@okhdfcbank
-    </p>
-
-    <a href="contact.html" style="text-decoration:none; color:#0077ff;">
-        Contact Us
-    </a>
-</div>
+            
 
 
-<!-- ============ QUICK SERVICES ============ -->
-<div class="services-box">
-    <h2>Quick Services</h2>
+         
 
-    <p>Sofa Cleaning</p>
-    <p>Carpet Cleaning</p>
-    <p>Nano Coating</p>
-    <p>Glass Coating</p>
-    <p>Curtain Cleaning</p>
-    <p>Steam Curtain Cleaning</p>
-</div>
+      
 
 
-<!-- ============ FOOTER ============ -->
-<div class="footer">
-    © 2025 Mahadev Fabric Care — All Rights Reserved
-</div>
 
-</body>
-</html>
+
+    
+
+
+
+
+
+
+
+
 
 
                                                               
