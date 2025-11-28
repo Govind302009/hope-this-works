@@ -1,263 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Cleaning Services</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mahadev Fabric Care</title>
+
+  <!-- external stylesheet (keep styles.css at repo root) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Meta / SEO basic -->
+  <meta name="description" content="Mahadev Fabric Care — Sofa, Carpet, Curtain cleaning, Nano coating & steam cleaning. Request a quote via WhatsApp." />
 </head>
 <body>
 
-<!-- =============================== -->
-<!--            HEADER               -->
-<!-- =============================== -->
-
-<header class="header">
-    <nav class="navbar">
-        <div class="logo">Royal Cleaning</div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">Why Us</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- =============================== -->
-<!--            HERO SECTION         -->
-<!-- =============================== -->
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>Premium Home & Office Cleaning</h1>
-        <p>Professional, affordable & reliable cleaning services across the city.</p>
-
-        <div class="hero-buttons">
-            <a href="#services" class="btn-primary">View Services</a>
-            <a href="#contact" class="btn-secondary">Book Now</a>
+  <!-- FIXED HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="mark">MFC</div>
+        <div class="brand-text">
+          <div class="company-name">Mahadev Fabric Care</div>
+          <div class="company-tag">Sofa • Carpet • Curtain • Nano Coatings</div>
         </div>
+      </div>
+
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Book</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </nav>
     </div>
-</section>
-<!-- =============================== -->
-<!--          SERVICES SECTION       -->
-<!-- =============================== -->
+  </header>
 
-<section id="services" class="services">
-    <h2 class="section-title">Our Services</h2>
+  <!-- push content below fixed header -->
+  <div class="page-top-spacer"></div>
 
-    <div class="services-container">
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Revive your fabrics. <br/> Restore their shine.</h1>
+          <p class="hero-lead">
+            Premium, reliable and eco-friendly fabric care — Sofa, Carpet, Curtains, Nano & Glass coatings.
+            Request a quotation and we'll send a tailored price via WhatsApp / email.
+          </p>
 
-        <!-- Sofa Cleaning -->
-        <div class="service-box">
-            <img src="images/sofa.jpg" class="service-img">
+          <div class="hero-cta">
+            <a class="btn primary" href="booking.html">Request Service</a>
+            <a class="btn ghost" href="services.html">Our Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="qr-card">
+            <img src="assets/Mahadev_QR.png" alt="QR" class="qr-image" onerror="this.style.display='none'"/>
+            <h4>Scan to Pay</h4>
+            <div class="small">UPI: celebrateentertainmentguy@okhdfcbank</div>
+            <a class="link" href="contact.html">Contact Us</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- QUICK SERVICES (decorative corner thumbnails & quick links) -->
+    <section id="services" class="quick-services">
+      <div class="section-inner">
+        <h2 class="section-title">Quick Services</h2>
+
+        <div class="services-grid">
+          <article class="service-card" onclick="location.href='services.html#sofa'">
+            <img src="images/sofa.jpg" alt="Sofa Cleaning" class="service-thumb" />
             <h3>Sofa Cleaning</h3>
-            <p>Deep shampoo + foam scrubbing + stain removal + freshening.</p>
-            <a href="services.html#sofa" class="service-btn">Learn More</a>
-        </div>
+          </article>
 
-        <!-- Carpet Cleaning -->
-        <div class="service-box">
-            <img src="images/carpet.jpg" class="service-img">
+          <article class="service-card" onclick="location.href='services.html#carpet'">
+            <img src="images/carpet.jpg" alt="Carpet Cleaning" class="service-thumb" />
             <h3>Carpet Cleaning</h3>
-            <p>Industrial machine cleaning • Dust extraction • Shampoo deep clean.</p>
-            <a href="services.html#carpet" class="service-btn">Learn More</a>
-        </div>
+          </article>
 
-        <!-- Nano Coating -->
-        <div class="service-box">
-            <img src="images/nano.jpg" class="service-img">
+          <article class="service-card" onclick="location.href='services.html#nano'">
+            <img src="images/nano.jpg" alt="Nano Coating" class="service-thumb" />
             <h3>Nano Coating</h3>
-            <p>Advanced fabric protection • Water-repellent • Stain guard coating.</p>
-            <a href="services.html#nano" class="service-btn">Learn More</a>
+          </article>
+
+          <article class="service-card" onclick="location.href='services.html#steam'">
+            <img src="images/steam.jpg" alt="Steam Curtain Cleaning" class="service-thumb" />
+            <h3>Steam Curtain Cleaning</h3>
+          </article>
+
+          <article class="service-card" onclick="location.href='services.html#glass'">
+            <img src="images/glass.jpg" alt="Glass Coating" class="service-thumb" />
+            <h3>Glass Coating</h3>
+          </article>
+
+          <article class="service-card" onclick="location.href='services.html#curtain'">
+            <img src="images/curtain.jpg" alt="Curtain Cleaning" class="service-thumb" />
+            <h3>Curtain Cleaning</h3>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Steam Cleaning -->
-        <div class="service-box">
-            <img src="images/steam.jpg" class="service-img">
-            <h3>Steam Cleaning</h3>
-            <p>Kills 99.9% bacteria • Chemical-free sanitization • Deep refresh.</p>
-            <a href="services.html#steam" class="service-btn">Learn More</a>
+    <!-- WHY CHOOSE US -->
+    <section id="whyus" class="why-us">
+      <div class="section-inner">
+        <h2 class="section-title">Why Choose Us?</h2>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <img src="icons/professional.png" alt="Professional" class="why-icon" onerror="this.style.display='none'"/>
+            <h4>Professional Experts</h4>
+            <p>Trained technicians and industrial-grade equipment for flawless results.</p>
+          </div>
+
+          <div class="why-item">
+            <img src="icons/eco.png" alt="Eco friendly" class="why-icon" onerror="this.style.display='none'"/>
+            <h4>Eco-friendly Products</h4>
+            <p>Non-toxic solutions safe for children, pets and sensitive fabrics.</p>
+          </div>
+
+          <div class="why-item">
+            <img src="icons/quick.png" alt="Quick" class="why-icon" onerror="this.style.display='none'"/>
+            <h4>Quick & Reliable</h4>
+            <p>On-time appointments, smooth execution and fast turnaround.</p>
+          </div>
+
+          <div class="why-item">
+            <img src="icons/quality.png" alt="Quality" class="why-icon" onerror="this.style.display='none'"/>
+            <h4>Quality Guaranteed</h4>
+            <p>Complete stain removal, deodorizing and long-lasting freshness.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-<!-- =============================== -->
-<!--        WHY CHOOSE US            -->
-<!-- =============================== -->
+    <!-- CONTACT SECTION (fixed layout with payment card) -->
+    <section id="contact" class="contact-section">
+      <div class="section-inner contact-container">
 
-<section id="about" class="why-us">
-    <h2 class="section-title">Why Choose Us?</h2>
-
-    <div class="why-container">
-
-        <div class="why-box">
-            <img src="icons/professional.png" class="why-icon">
-            <h3>Professional Experts</h3>
-            <p>Trained technicians with high-grade equipment for flawless results.</p>
-        </div>
-
-        <div class="why-box">
-            <img src="icons/eco.png" class="why-icon">
-            <h3>Eco-Friendly Products</h3>
-            <p>Safe for kids, pets & sensitive fabrics using non-toxic solutions.</p>
-        </div>
-
-        <div class="why-box">
-            <img src="icons/quick.png" class="why-icon">
-            <h3>Quick & Reliable</h3>
-            <p>On-time service with smooth booking & fast execution.</p>
-        </div>
-
-        <div class="why-box">
-            <img src="icons/quality.png" class="why-icon">
-            <h3>Quality Guaranteed</h3>
-            <p>Premium finishing • Stain removal • Long-lasting freshness.</p>
-        </div>
-
-    </div>
-</section>
-<!-- =============================== -->
-<!--          CONTACT US             -->
-<!-- =============================== -->
-
-<section id="contact" class="contact-section">
-
-    <div class="contact-container">
-
-        <!-- LEFT SIDE -->
+        <!-- LEFT: Contact details -->
         <div class="contact-left">
-            <h2>Contact Us</h2>
+          <h2 class="section-title">Contact Us</h2>
 
-            <div class="contact-box">
-                <h3>📞 Reach Us</h3>
-                <p><strong>Phone:</strong> +91 9876543210</p>
-                <p><strong>WhatsApp:</strong> <a href="#">Chat on WhatsApp</a></p>
-                <p><strong>Email:</strong> support@furnifresh.com</p>
-            </div>
-
-            <div class="contact-box">
-                <h3>📍 Service Locations</h3>
-                <p>Mumbai • Thane • Navi Mumbai</p>
-            </div>
-
-            <div class="contact-box">
-                <h3>⏰ Working Hours</h3>
-                <p>Monday — Sunday<br>8:00 AM – 10:00 PM</p>
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="contact-right">
-            <div class="payment-card">
-                <h3>💳 Quick Payment</h3>
-                <p>Scan & Pay using UPI</p>
-                <img src="images/upi.png" class="upi-img" alt="UPI QR">
-
-                <a href="#" class="wa-pay">WhatsApp Now</a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-    
-
-    <div class="contact-container">
-
-        <!-- Left Side -->
-        <div class="contact-details">
+          <div class="contact-block">
             <h3>📞 Reach Us</h3>
-            <p><strong>Phone:</strong> +91 9876543210</p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">Chat on WhatsApp</a></p>
-            <p><strong>Email:</strong> support@furnifresh.com</p>
+            <p><strong>Phone:</strong> +91 9820399529</p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919820399529" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+            <p><strong>Email:</strong> <a href="mailto:mahadevfabriccare@gmail.com">mahadevfabriccare@gmail.com</a></p>
+          </div>
 
+          <div class="contact-block">
             <h3>📍 Service Location</h3>
-            <p>Mumbai • Thane • Navi Mumbai</p>
+            <p>M-301 Om Sai Niwas CHS Ltd, Vijay Park, near RNA Liberty, Mira Road East, Thane, Maharashtra 401107</p>
+          </div>
 
+          <div class="contact-block">
             <h3>⏱ Working Hours</h3>
-            <p>Monday – Sunday<br>8:00 AM – 10:00 PM</p>
+            <p>Monday – Sunday: 08:00 AM – 10:00 PM</p>
+          </div>
         </div>
 
-        <!-- Right Side -->
-        <div class="payment-box">
+        <!-- RIGHT: Payment / CTA card -->
+        <aside class="contact-right">
+          <div class="payment-card">
             <h3>💳 Quick Payment</h3>
-            <img src="images/paymentQR.png" alt="UPI Payment QR" class="qr-img">
-            <p>Scan & Pay using UPI</p>
+            <img src="assets/Mahadev_QR.png" alt="UPI QR" class="payment-qr" onerror="this.style.display='none'"/>
+            <div class="small">Scan & Pay using UPI</div>
+            <a class="btn whatsapp-cta" href="https://wa.me/919820399529" target="_blank" rel="noopener">WhatsApp Now</a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-            <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
-                WhatsApp Now
-            </a>
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials">
+      <div class="section-inner">
+        <h2 class="section-title">What our customers say</h2>
+
+        <div class="test-grid">
+          <div class="test-card">
+            <p>"Amazing sofa cleaning — it looks brand new. Highly recommended!"</p>
+            <h4>- Priya S.</h4>
+          </div>
+          <div class="test-card">
+            <p>"Fast, professional and careful team. Carpet is fresh again."</p>
+            <h4>- Rahul M.</h4>
+          </div>
+          <div class="test-card">
+            <p>"Nano coating saved my sofa from spills — great service."</p>
+            <h4>- Aarav D.</h4>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-<!-- =============================== -->
-<!--        WHATSAPP FLOATING BTN    -->
-<!-- =============================== -->
+  </main>
 
-<a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank">
-    <img src="icons/whatsapp.png" alt="WhatsApp">
-</a>
-<!-- =============================== -->
-<!--             FOOTER              -->
-<!-- =============================== -->
+  <!-- FOOTER (placed at very end) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>Mahadev Fabric Care</h3>
+        <p>Professional cleaning services for Sofa, Mattress, Carpet, Car Seats & Home Furnishings.</p>
+        <p class="small">GST: 27ABCPU5692D2ZC</p>
+      </div>
 
-<footer class="footer">
-    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#whyus">Why Choose Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-col">
-            <h3>FurniFresh</h3>
-            <p>Professional cleaning services for Sofa, Mattress, Carpet, Car Seats & Home Furnishings.</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#whyus">Why Choose Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contact Info</h4>
-            <p><strong>Phone:</strong> +91 9876543210</p>
-            <p><strong>Email:</strong> support@furnifresh.com</p>
-            <p><strong>Location:</strong> Mumbai, India</p>
-        </div>
-
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p><strong>Phone:</strong> +91 9820399529</p>
+        <p><strong>Email:</strong> <a href="mailto:mahadevfabriccare@gmail.com">mahadevfabriccare@gmail.com</a></p>
+        <p><strong>Address:</strong> M-301 Om Sai Niwas CHS Ltd, Vijay Park, Mira Road East, Thane - 401107</p>
+      </div>
     </div>
 
     <div class="footer-bottom">
-        <p>© 2025 FurniFresh Cleaning Services. All Rights Reserved.</p>
+      <p>© 2025 Mahadev Fabric Care. All rights reserved.</p>
     </div>
-</footer>
-<!-- Back To Top Button -->
-<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" 
-        class="back-to-top">↑</button>
+  </footer>
 
-<script>
-    window.addEventListener("scroll", function () {
-        const btn = document.querySelector(".back-to-top");
-        if (window.scrollY > 300) {
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
-        }
-    });
-</script>
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" title="Back to top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+  <!-- FLOATING WHATSAPP -->
+  <a class="floating-wa" href="https://wa.me/919820399529" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <img src="icons/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'"/>
+  </a>
 
-            
+  <!-- SCRIPTS -->
+  <!-- a) app scripts (firebase helpers are optional — kept external) -->
+  <script src="firebase-config.js"></script>
+  <script src="auth-db.js"></script>
 
+  <!-- b) UI helpers: back-to-top show/hide -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.back-to-top');
+      function toggleBtn(){
+        if(window.scrollY > 300) btn.style.display = 'block';
+        else btn.style.display = 'none';
+      }
+      window.addEventListener('scroll', toggleBtn);
+      document.addEventListener('DOMContentLoaded', toggleBtn);
+    })();
+  </script>
 
-         
-
-      
-
+</body>
+</html>
 
 
 
