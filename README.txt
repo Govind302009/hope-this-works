@@ -1,0 +1,1 @@
+Mahadev Fabric Care - Modern rebuilt package. Replace firebase-config.js if needed. Upload these files to repo root.

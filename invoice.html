@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Invoice</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="container"><section class="card" style="max-width:820px;margin:18px auto"><h2>Work Invoice / Report</h2><div id="invMeta"><div>Invoice No: <span id="invNo">-</span></div><div>Service: <span id="invService">-</span></div><div>Customer: <span id="custName">-</span></div></div><div style="margin-top:14px"><button class="btn" id="downloadPdf">Download PDF</button></div></section></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script><script src="auth-db.js"></script><script>
+(async function(){
+  function qs(id){return document.getElementById(id);}
+  const params = new URLSearchParams(window.location.search);
+  const bid = params.get('bid');
+  if(!bid){ qs('invService').innerText='-'; qs('custName').innerText='-'; return; }
+  const data = await MFC.loadBookingById(bid);
+  if(data){ qs('invNo').innerText = bid; qs('invService').innerText = data.service||'-'; qs('custName').innerText = data.email||data.phone||'-'; }
+  document.getElementById('downloadPdf').addEventListener('click', ()=>{ MFC.generateInvoicePDF({ id: qs('invNo').innerText, service: qs('invService').innerText, customer: qs('custName').innerText, date: '', amount: '' }); });
+})();
+</script></body></html>

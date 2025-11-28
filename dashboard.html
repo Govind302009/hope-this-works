@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="container header card" style="display:flex;justify-content:space-between;align-items:center"><div><strong>Mahadev Fabric Care</strong></div><div><span id="userEmail" class="small"></span> <button class="btn" onclick="MFC.logoutUser()">Logout</button></div></header>
+<main class="container"><section class="card" style="margin-top:18px"><h2>Your Work Reports</h2><p class="small">Below you will see your bookings once you request services.</p><div id="reportsArea" class="dashboard-grid"></div></section></main>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script><script src="auth-db.js"></script><script> MFC.protectPage(); window.addEventListener('load', ()=>{ setTimeout(()=>{ MFC.loadUserBookings('reportsArea') },600); }); </script></body></html>
