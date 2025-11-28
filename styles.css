@@ -221,4 +221,24 @@ button:hover {
 .back-to-top:hover {
     opacity: 1;
 }
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.back-to-top:hover {
+    background: #444;
+}
 
