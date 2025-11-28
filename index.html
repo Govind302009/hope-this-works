@@ -1,3 +1,170 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Mahadev Fabric Care</title><link rel="stylesheet" href="styles.css"/></head><body>
-<header class="container header"><div class="brand"><div class="mark">MFC</div><div><div style="font-weight:900;color:var(--royal)">Mahadev Fabric Care</div><div class="small">Sofa • Carpet • Curtain • Nano Coatings</div></div></div><nav class="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="booking.html">Book</a><a href="login.html">Login</a><a href="register.html">Register</a></nav></header>
-<main class="container"><section class="card hero"><div style="flex:1"><h1 class="headline">Revive your fabrics. Restore their shine.</h1><p class="lead">Premium, reliable, and eco-friendly fabric care. Request a quotation and we'll send a tailored price via WhatsApp/email.</p><div style="margin-top:12px"><a class="btn" href="booking.html">Request Service</a> <a class="btn ghost" href="services.html" style="margin-left:8px">Our Services</a></div></div><div style="width:320px"><div class="card" style="text-align:center"><img src="assets/Mahadev_QR.png" id="qrImg" alt="QR" style="width:160px;height:160px;border-radius:8px;border:1px solid rgba(11,61,145,0.04)"/><div style="margin-top:8px;font-weight:700;color:var(--royal)">Scan to Pay</div><div class="small">UPI: celebrateentertainmentguy@okhdfcbank</div><div style="margin-top:10px"><a class="btn" href="contact.html" style="text-decoration:none">Contact Us</a></div></div></div></section><section class="card" style="margin-top:18px"><h3 style="margin:0;color:var(--royal)">Quick Services</h3><div class="services-grid"><div class="service-card" onclick="location.href='services.html#sofa'">Sofa Cleaning</div><div class="service-card" onclick="location.href='services.html#carpet'">Carpet Cleaning</div><div class="service-card" onclick="location.href='services.html#nano'">Nano Coating</div><div class="service-card" onclick="location.href='services.html#glass'">Glass Coating</div><div class="service-card" onclick="location.href='services.html#curtain'">Curtain Cleaning</div><div class="service-card" onclick="location.href='services.html#steam'">Steam Curtain Cleaning</div></div></section><footer class="container" style="margin-top:18px"><div class="small">Mahadev Fabric Care • WhatsApp: 9820399529 • Email: mahadevfabriccare@gmail.com</div></footer></main><a href="https://wa.me/919820399529" class="whatsapp-float" target="_blank">WhatsApp</a><script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script><script src="firebase-config.js"></script><script src="auth-db.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadev Fabric Care</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f9fc;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 15px auto;
+            color: #444;
+        }
+
+        .qr-box {
+            background: white;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .services-box {
+            background: white;
+            max-width: 600px;
+            margin: 25px auto;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header>
+    <div class="header-container">
+
+        <div>
+            <h2 style="margin:0; font-weight:700;">MFC</h2>
+            <p style="margin:0; font-size:12px; color:#666;">
+                Mahadev Fabric Care
+            </p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="book.html">Book</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ============ HERO SECTION ============ -->
+<div class="hero">
+    <h1>Revive your fabrics.<br>Restore their shine.</h1>
+    <p>
+        Premium, reliable, and eco-friendly fabric care.  
+        Request a quotation and we'll send a tailored price  
+        via WhatsApp or email.
+    </p>
+
+    <a href="book.html"
+       style="display:inline-block; margin:15px; padding:12px 22px; background:#000; color:white;
+              border-radius:8px; text-decoration:none;">
+        Request Service
+    </a>
+
+    <a href="services.html"
+       style="display:inline-block; margin:15px; padding:12px 22px; background:#444; color:white;
+              border-radius:8px; text-decoration:none;">
+        Our Services
+    </a>
+</div>
+
+
+<!-- ============ QR PAYMENT BOX ============ -->
+<div class="qr-box">
+    <img src="qr.png" alt="QR" style="width:120px; margin-bottom:15px;">
+    <h3>Scan to Pay</h3>
+    <p style="font-size:14px; color:#444;">
+        UPI: celebrateentertainmentguy@okhdfcbank
+    </p>
+
+    <a href="contact.html" style="text-decoration:none; color:#0077ff;">
+        Contact Us
+    </a>
+</div>
+
+
+<!-- ============ QUICK SERVICES ============ -->
+<div class="services-box">
+    <h2>Quick Services</h2>
+
+    <p>Sofa Cleaning</p>
+    <p>Carpet Cleaning</p>
+    <p>Nano Coating</p>
+    <p>Glass Coating</p>
+    <p>Curtain Cleaning</p>
+    <p>Steam Curtain Cleaning</p>
+</div>
+
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+    © 2025 Mahadev Fabric Care — All Rights Reserved
+</div>
+
+</body>
+</html>
+
+
+                                                              
