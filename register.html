@@ -1,6 +1,83 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Register</title><link rel="stylesheet" href="styles.css"></head><body>
-<main class="container"><section class="card" style="max-width:520px;margin:36px auto"><h2>Create account</h2><label class="small">Full name</label><input id="regName" placeholder="Your name"><label class="small">Email</label><input id="regEmail" placeholder="you@example.com"><label class="small">Password</label><input id="regPass" type="password"><div style="margin-top:12px"><button class="btn" onclick="MFC.registerUser()">Create Account</button> <a href="login.html" style="margin-left:10px">Login</a></div></section></main>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js"></script><script src="auth-db.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register – Mahadev Fabricare</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .step { display: none; }
+        .step.active { display: block; }
+    </style>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDCak44j2_A0HNOfiIlVyG6KDCDuU0JBmU",
+            authDomain: "mahadevfabricare.firebaseapp.com",
+            projectId: "mahadevfabricare",
+            storageBucket: "mahadevfabricare.firebasestorage.app",
+            messagingSenderId: "134839033464",
+            appId: "1:134839033464:web:dbc2e9b2f0ca5a9c45978d",
+            measurementId: "G-REH9MX7MCG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.nextStep = function () {
+            document.getElementById("step1").classList.remove("active");
+            document.getElementById("step2").classList.add("active");
+        };
+
+        window.registerUser = function () {
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!name || !phone || !email || !password) {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    alert("Registration successful!");
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    alert("Registration failed: " + error.message);
+                });
+        };
+    </script>
+</head>
+
+<body>
+    <div class="card">
+
+        <h2>Create Account</h2>
+
+        <!-- STEP 1 -->
+        <div id="step1" class="step active">
+            <input type="text" id="name" placeholder="Full Name" />
+            <input type="text" id="phone" placeholder="Phone Number" />
+            <button onclick="nextStep()">Next</button>
+            <a class="link" href="login.html">Already registered? Login</a>
+        </div>
+
+        <!-- STEP 2 -->
+        <div id="step2" class="step">
+            <input type="email" id="email" placeholder="Email Address" />
+            <input type="password" id="password" placeholder="Create Password" />
+            <button onclick="registerUser()">Register</button>
+        </div>
+
+    </div>
+</body>
+</html>
+
