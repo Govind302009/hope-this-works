@@ -195,6 +195,20 @@
         <p>© 2025 FurniFresh Cleaning Services. All Rights Reserved.</p>
     </div>
 </footer>
+<!-- Back To Top Button -->
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" 
+        class="back-to-top">↑</button>
+
+<script>
+    window.addEventListener("scroll", function () {
+        const btn = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+</script>
 
 
             
