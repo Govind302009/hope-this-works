@@ -1,6 +1,110 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book Service</title><link rel="stylesheet" href="styles.css"></head><body>
-<main class="container"><section class="card" style="max-width:760px;margin:28px auto"><h2>Request a Service / Quotation</h2><label class="small">Select Service</label><select id="serviceSelect"><option>Sofa Cleaning</option><option>Carpet Cleaning</option><option>Nano Coating</option><option>Glass Coating</option><option>Curtain Cleaning</option><option>Steam Curtain Cleaning</option></select><div style="display:flex;gap:12px;margin-top:8px"><div style="flex:1"><label class="small">Preferred Date</label><input type="date" id="serviceDate" required/></div><div style="width:200px"><label class="small">Preferred Time</label><input type="time" id="serviceTime"/></div></div><label class="small" style="margin-top:8px">Contact Phone (WhatsApp)</label><input id="contactPhone" placeholder="e.g. 9820399529"/><label class="small">Notes / Address</label><textarea id="serviceNotes"></textarea><div style="margin-top:12px"><button class="btn" type="button" onclick="MFC.submitBooking()">Request Quotation</button></div><div id="bookMsg" style="margin-top:12px"></div></section></main>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js"></script><script src="auth-db.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service – Mahadev Fabric Care</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .booking-container {
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 30px;
+        }
+    </style>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDCak44j2_A0HNOfiIlVyG6KDCDuU0JBmU",
+            authDomain: "mahadevfabricare.firebaseapp.com",
+            projectId: "mahadevfabricare",
+            storageBucket: "mahadevfabricare.firebasestorage.app",
+            messagingSenderId: "134839033464",
+            appId: "1:134839033464:web:dbc2e9b2f0ca5a9c45978d",
+            measurementId: "G-REH9MX7MCG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let currentUserId = null;
+
+        onAuthStateChanged(auth, user => {
+            if (!user) {
+                window.location.href = "login.html";
+                return;
+            }
+            currentUserId = user.uid;
+        });
+
+        window.submitBooking = async function () {
+            const service = document.getElementById("service").value;
+            const date = document.getElementById("date").value;
+            const notes = document.getElementById("notes").value;
+
+            if (!service || !date) {
+                alert("Please select a service and date!");
+                return;
+            }
+
+            await addDoc(collection(db, "bookings"), {
+                userId: currentUserId,
+                service,
+                date,
+                notes,
+                status: "Pending",
+                createdAt: new Date()
+            });
+
+            alert("Booking request sent successfully!");
+
+            // WhatsApp message
+            const msg =
+                `New Booking Request:%0A` +
+                `Service: ${service}%0A` +
+                `Date: ${date}%0A` +
+                `Notes: ${notes ? notes : "None"}`;
+
+            window.open(`https://wa.me/919820399529?text=${msg}`, "_blank");
+
+            window.location.href = "dashboard.html";
+        };
+    </script>
+</head>
+
+<body>
+
+    <div class="booking-container">
+        <h2>Book a Service</h2>
+
+        <label>Select Service</label>
+        <select id="service">
+            <option value="">-- Choose Service --</option>
+            <option value="Sofa Cleaning">Sofa Cleaning</option>
+            <option value="Carpet Cleaning">Carpet Cleaning</option>
+            <option value="Nano Coating">Nano Coating</option>
+            <option value="Glass Coating">Glass Coating</option>
+            <option value="Curtain Cleaning">Curtain Cleaning</option>
+            <option value="Steam Curtain Cleaning">Steam Curtain Cleaning</option>
+        </select>
+
+        <label>Select Date</label>
+        <input type="date" id="date">
+
+        <label>Additional Notes (optional)</label>
+        <textarea id="notes" placeholder="Any instructions?"></textarea>
+
+        <button class="btn" onclick="submitBooking()">Submit Booking</button>
+    </div>
+
+</body>
+</html>
+
