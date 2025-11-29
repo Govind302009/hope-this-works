@@ -1,143 +1,374 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahadev Fabric Care</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mahadev Fabric Care</title>
+  <meta name="description" content="Mahadev Fabric Care — Sofa, Carpet, Curtain cleaning, Nano coating & steam cleaning. Request a quote via WhatsApp." />
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background: #f7f7f7;
-            font-family: Arial, sans-serif;
-        }
+  <!-- Optional external stylesheet (keep styles.css in repo root) -->
+  <link rel="stylesheet" href="styles.css">
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
+  <!-- Inline theme & layout styles (ensures page looks correct even without styles.css) -->
+  <style>
+    :root{
+      --nav-bg: #04142a;
+      --accent: #1e6ed8;
+      --muted: #c7d7f6;
+      --card-bg: #071730;
+      --page-bg: #f4f7fb;
+    }
 
-        .feature-box {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
+    body {
+      background: var(--page-bg);
+      color: #0b2640;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-        footer {
-            background: #222;
-            color: #ddd;
-            padding: 40px 0;
-        }
+    /* Navbar */
+    .navbar { background: var(--nav-bg); }
+    .navbar .navbar-brand { color: #fff !important; font-weight:700; }
+    .navbar .nav-link { color: rgba(255,255,255,0.9); }
+    .navbar .nav-link:hover { color: #fff; }
 
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-        }
+    .page-top-spacer { height: 70px; }
 
-        footer a:hover {
-            color: #fff;
-        }
-    </style>
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(4,18,42,0.6), rgba(4,18,42,0.6));
+    }
+    .hero .hero-inner {
+      padding: 70px 15px;
+      display:flex;
+      gap: 2rem;
+      align-items:center;
+      width:100%;
+    }
+    .hero-left { max-width: 680px; }
+    .hero-title { font-size: 2.4rem; font-weight:800; margin-bottom: 12px; }
+    .hero-lead { color: #dceeff; line-height:1.55; margin-bottom:18px; }
+    .hero .btn-primary.custom { background: var(--accent); border: none; padding: 10px 18px; border-radius:8px; font-weight:700; }
 
+    .hero-figure {
+      flex: 1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .hero-figure img { width:100%; max-width:420px; border-radius:14px; box-shadow: 0 20px 50px rgba(2,8,20,0.35); }
+
+    /* services */
+    .service-card {
+      border-radius:12px;
+      padding: 12px;
+      background: #fff;
+      transition: transform .18s, box-shadow .18s;
+      cursor:pointer;
+      border:1px solid rgba(12,20,40,0.04);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 14px 40px rgba(2,8,20,0.06); }
+    .service-thumb { width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px; }
+
+    /* why us */
+    .why-item { background:#fff; padding:18px; border-radius:10px; box-shadow:0 6px 20px rgba(2,8,20,0.04); }
+
+    /* contact */
+    .contact-container { display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap; }
+    .contact-left { flex:1 1 540px; }
+    .contact-right { width:320px; flex:0 0 320px; }
+
+    .payment-card { background:#fff; padding:18px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(2,8,20,0.05); }
+    .payment-qr { width:180px; height:180px; object-fit:contain; margin:12px auto; border-radius:8px; }
+
+    /* testimonials */
+    .test-card { background:#fff; padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(2,8,20,0.04); }
+
+    /* footer */
+    .site-footer { background:#061223; color:#dbeeff; padding:40px 0; }
+    .site-footer a { color:#bfe1ff; text-decoration:none; }
+    .site-footer a:hover { text-decoration:underline; }
+
+    /* back-to-top */
+    .back-to-top { position:fixed; bottom:22px; right:22px; z-index:1100; display:none; width:52px; height:52px; border-radius:50%; background:var(--accent); color:#fff; border:none; box-shadow:0 12px 30px rgba(2,8,20,0.25); }
+
+    /* floating whatsapp */
+    .floating-wa { position:fixed; bottom:90px; right:22px; z-index:1100; }
+
+    @media (max-width: 991px) {
+      .hero { min-height: 380px; }
+      .hero-title { font-size: 1.6rem; }
+      .hero-inner { flex-direction:column; padding: 30px 12px; }
+      .contact-right { width:100%; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- WHY CHOOSE US SECTION -->
-<section class="container py-5">
-    <h2 class="section-title text-center">Why Choose Us?</h2>
-
-    <div class="row g-4">
-
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-box">
-                <h5>Professional Experts</h5>
-                <p>Trained technicians with industrial-grade equipment for flawless results.</p>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-box">
-                <h5>Eco-friendly Products</h5>
-                <p>Non-toxic chemicals safe for children, pets and sensitive fabrics.</p>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-box">
-                <h5>Quick & Reliable</h5>
-                <p>Same-day service availability with fast & smooth execution.</p>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-            <div class="feature-box">
-                <h5>Quality Guaranteed</h5>
-                <p>Stain removal, deodorizing and long-lasting freshness ensured.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
+  <!-- NAVBAR (sticky) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <div class="row">
-
-            <!-- COMPANY INFO -->
-            <div class="col-md-4 mb-4">
-                <h5>Mahadev Fabric Care</h5>
-                <p>Professional cleaning for Sofa, Mattress, Carpet, Car Seats & Home Furnishings.</p>
-                <p>GST: 27ABCPU5692D2ZC</p>
-            </div>
-
-            <!-- QUICK LINKS -->
-            <div class="col-md-4 mb-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Why Choose Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- CONTACT INFO -->
-            <div class="col-md-4 mb-4">
-                <h5>Contact Info</h5>
-                <p><strong>Phone:</strong> +91 9820399529</p>
-                <p><strong>Email:</strong> mahadevfabriccare@gmail.com</p>
-                <p><strong>Address:</strong><br>
-                    M-301 Om Sai Niwas CHS Ltd,<br>
-                    Vijay Park, Mira Road East,<br>
-                    Thane – 401107
-                </p>
-            </div>
-
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#0a3b7a);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;">MFC</div>
+        <div class="ms-2">
+          <div style="font-weight:800; color:#fff;">Mahadev Fabric Care</div>
+          <small style="color:var(--muted);font-size:12px;">Sofa • Carpet • Curtain • Nano Coatings</small>
         </div>
+      </a>
 
-        <div class="text-center pt-3 border-top mt-3">
-            © 2025 Mahadev Fabric Care. All rights reserved.
-        </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#whyus">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
     </div>
-</footer>
+  </nav>
 
+  <div class="page-top-spacer"></div>
 
+  <!-- HERO (banner image) -->
+  <section class="hero" style="background-image: url('images/hero.jpg'); background-size:cover; background-position:center;">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Revive your fabrics. Restore their shine.</h1>
+          <p class="hero-lead">Premium, reliable and eco-friendly fabric care — Sofa, Carpet, Curtains, Nano & Glass coatings. Request a quotation and we'll send a tailored price via WhatsApp or email.</p>
+          <div class="d-flex gap-2">
+            <a href="booking.html" class="btn btn-primary custom">Request Service</a>
+            <a href="services.html" class="btn btn-outline-light">Our Services</a>
+          </div>
+        </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="hero-figure">
+          <img src="images/hero.jpg" alt="Clean interior" />
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SERVICES -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="row g-4">
+        <!-- Sofa -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#sofa'">
+            <img src="images/sofa.jpg" alt="Sofa Cleaning" class="service-thumb">
+            <h5>Sofa Cleaning</h5>
+            <p class="text-muted small">Deep shampoo, steam extraction and professional upholstery care.</p>
+          </div>
+        </div>
+
+        <!-- Carpet -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#carpet'">
+            <img src="images/carpet.jpg" alt="Carpet Cleaning" class="service-thumb">
+            <h5>Carpet Cleaning</h5>
+            <p class="text-muted small">High-power extraction for fresh, dust-free carpets.</p>
+          </div>
+        </div>
+
+        <!-- Nano -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#nano'">
+            <img src="images/nano.jpg" alt="Nano Coating" class="service-thumb">
+            <h5>Nano Coating</h5>
+            <p class="text-muted small">Scotchgard-grade hydrophobic protection for fabrics.</p>
+          </div>
+        </div>
+
+        <!-- Glass -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#glass'">
+            <img src="images/glass.jpg" alt="Glass Coating" class="service-thumb">
+            <h5>Glass Coating</h5>
+            <p class="text-muted small">Hydrophobic coatings for windows & mirrors.</p>
+          </div>
+        </div>
+
+        <!-- Curtain -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#curtain'">
+            <img src="images/curtain.jpg" alt="Curtain Cleaning" class="service-thumb">
+            <h5>Curtain Cleaning</h5>
+            <p class="text-muted small">Gentle cleaning, steaming & re-hang options.</p>
+          </div>
+        </div>
+
+        <!-- Steam -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100" onclick="location.href='services.html#steam'">
+            <img src="images/steam.jpg" alt="Steam Cleaning" class="service-thumb">
+            <h5>Steam Curtain Cleaning</h5>
+            <p class="text-muted small">High-temp steam sanitization for curtains & upholstery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="whyus" class="py-4">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="why-item">
+            <h6>Professional Experts</h6>
+            <p class="small text-muted">Trained technicians with industrial-grade equipment.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="why-item">
+            <h6>Eco-Friendly Products</h6>
+            <p class="small text-muted">Safe, non-toxic solutions for homes with kids & pets.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="why-item">
+            <h6>Quick & Reliable</h6>
+            <p class="small text-muted">On-time bookings with fast turnaround.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="why-item">
+            <h6>Quality Guaranteed</h6>
+            <p class="small text-muted">Long-lasting freshness and stain protection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-left">
+          <h2 class="section-title">Contact Us</h2>
+
+          <div class="mb-3">
+            <h5>📞 Reach Us</h5>
+            <p class="mb-1"><strong>Phone:</strong> +91 9820399529</p>
+            <p class="mb-1"><strong>WhatsApp:</strong> <a href="https://wa.me/919820399529" class="link-dark" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+            <p class="mb-1"><strong>Email:</strong> <a href="mailto:mahadevfabriccare@gmail.com" class="link-dark">mahadevfabriccare@gmail.com</a></p>
+          </div>
+
+          <div class="mb-3">
+            <h5>📍 Address</h5>
+            <p>M-301 Om Sai Niwas CHS Ltd, Vijay Park near RNA Liberty, Mira Road East, Thane – 401107</p>
+          </div>
+
+          <div>
+            <h5>⏱ Working Hours</h5>
+            <p>Mon – Sun: 08:00 AM – 10:00 PM</p>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="payment-card">
+            <h5>💳 Quick Payment</h5>
+            <img src="assets/Mahadev_QR.png" alt="UPI QR" class="payment-qr" onerror="this.style.display='none'">
+            <p class="small text-muted">Scan & pay using your UPI app.</p>
+            <a class="btn btn-success mt-2" href="https://wa.me/919820399529" target="_blank" rel="noopener">WhatsApp Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-4">
+    <div class="container">
+      <h2 class="section-title">What customers say</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><div class="test-card p-3 h-100">"<em>Amazing sofa cleaning — looks brand new.</em>"<div class="mt-2"><strong>- Priya S.</strong></div></div></div>
+        <div class="col-md-4"><div class="test-card p-3 h-100">"<em>Quick, professional and careful team.</em>"<div class="mt-2"><strong>- Rahul M.</strong></div></div></div>
+        <div class="col-md-4"><div class="test-card p-3 h-100">"<em>Nano coating saved my upholstery from spills.</em>"<div class="mt-2"><strong>- Aarav D.</strong></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="row">
+        <div class="col-md-5">
+          <h5>Mahadev Fabric Care</h5>
+          <p>Premium cleaning services for sofas, carpets, curtains & upholstery.</p>
+          <p class="small">GST: 27ABCPU5692D2ZC</p>
+        </div>
+
+        <div class="col-md-3">
+          <h6>Quick links</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#whyus">Why Choose Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <p><strong>Phone:</strong> +91 9820399529</p>
+          <p><strong>Email:</strong> <a href="mailto:mahadevfabriccare@gmail.com">mahadevfabriccare@gmail.com</a></p>
+          <p><strong>Address:</strong><br/>M-301 Om Sai Niwas CHS Ltd, Vijay Park, Mira Road East, Thane - 401107</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center py-3" style="border-top:1px solid rgba(255,255,255,0.03);">
+      <small>© 2025 Mahadev Fabric Care. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" title="Back to top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="floating-wa" href="https://wa.me/919820399529" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <img src="icons/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'">
+  </a>
+
+  <!-- Optional Firebase integration files -->
+  <script src="firebase-config.js"></script>
+  <script src="auth-db.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // back-to-top visibility
+    (function(){
+      const btn = document.querySelector('.back-to-top');
+      function toggle(){ btn.style.display = window.scrollY > 300 ? 'block' : 'none'; }
+      window.addEventListener('scroll', toggle);
+      document.addEventListener('DOMContentLoaded', toggle);
+    })();
+  </script>
 </body>
 </html>
 
-
-
-
-                                                              
+                             
