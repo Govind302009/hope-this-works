@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Hope This Works</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hope This Works</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <h2>Our Gallery</h2>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=1" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=2" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=3" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=4" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=5" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=6" alt="Gallery Image">
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Hope This Works. All rights reserved.
+    </footer>
+</body>
+</html>
