@@ -1,244 +1,74 @@
-/* ------- Global Styles ------- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background: #f4f7fb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* ------- Card Container ------- */
-.card {
-  width: 380px;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* ------- Headings ------- */
-h2 {
-  color: #222;
-  margin-bottom: 20px;
-}
-
-/* ------- Inputs ------- */
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s;
-}
-
-input:focus, select:focus {
-  border-color: #4b7bec;
-  box-shadow: 0 0 6px rgba(75, 123, 236, 0.4);
-}
-
-/* ------- Buttons ------- */
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  border: none;
-  background: #4b7bec;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #3867d6;
-}
-
-/* ------- Links ------- */
-.link {
-  margin-top: 15px;
-  display: block;
-  color: #4b7bec;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-/* ------- Dashboard Layout ------- */
-.dashboard-container {
-  width: 90%;
-  max-width: 600px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-container h2 {
-  text-align: center;
-}
-
-/* ------- Invoice Page ------- */
-.invoice-box {
-  width: 700px;
-  padding: 40px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-}
-/* CONTACT SECTION */
-.contact-section {
-    padding: 60px 20px;
-    background: #f4f4f4;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: auto;
-    gap: 40px;
-}
-
-.contact-details h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-.payment-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.qr-img {
-    width: 180px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.whatsapp-btn {
-    display: inline-block;
-    background: #25D366;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* FLOATING WHATSAPP BUTTON */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    width: 65px;
-    height: 65px;
-    z-index: 1000;
-}
-
-.floating-whatsapp img {
-    width: 100%;
-    height: 100%;
-}
-/* FOOTER */
-.footer {
-    background: #111;
-    color: #fff;
-    padding: 50px 20px 10px;
-    margin-top: 50px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.footer-col h3, .footer-col h4 {
-    margin-bottom: 15px;
-}
-
-.footer-col ul {
-    list-style: none;
+/* Reset weird spacing issues */
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.footer-col ul li {
-    margin-bottom: 8px;
+/* Section spacing */
+section {
+    padding: 60px 0;
 }
 
-.footer-col ul li a {
-    color: #ccc;
-    text-decoration: none;
+/* Hero section */
+.hero {
+    background: #eef3fa;
+    padding: 120px 0;
 }
 
-.footer-col ul li a:hover {
-    color: #fff;
+.hero-title {
+    font-size: 52px;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-.footer-bottom {
+/* Services */
+.service-card {
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Why Choose Us icons */
+.feature-box {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Contact card */
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Quick Payment */
+.payment-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #333;
-    color: #aaa;
 }
 
-/* BACK TO TOP BUTTON */
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    padding: 12px 16px;
-    border: none;
-    background: #000;
-    color: #fff;
-    font-size: 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0.7;
+/* Footer */
+.footer {
+    background: #111827;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
 }
 
-.back-to-top:hover {
-    opacity: 1;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #222;
-    color: #fff;
-    border: none;
-    padding: 12px 16px;
-    font-size: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-}
 
-.back-to-top:hover {
-    background: #444;
-}
+
+
+
+
 
