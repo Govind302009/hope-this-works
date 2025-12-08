@@ -1,74 +1,68 @@
-/* Reset weird spacing issues */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+  --primary:#0d6efd;
+  --accent:#4e9aff;
+  --bg:#f7fbff;
+  --muted:#6c757d;
+  --card-shadow: 0 12px 30px rgba(15,24,40,0.06);
+  --glass: rgba(255,255,255,0.6);
 }
 
-/* Section spacing */
-section {
-    padding: 60px 0;
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  margin:0;background:var(--bg);color:#111;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 
-/* Hero section */
-.hero {
-    background: #eef3fa;
-    padding: 120px 0;
+/* NAV */
+.nav-glass{
+  background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+  backdrop-filter: blur(10px);
+  padding:0.8rem 0;
+  transition: all .3s ease;
 }
+.navbar-brand{font-weight:700;letter-spacing:0.2px}
+.nav-link{color:#222 !important;font-weight:600;margin-left:8px}
 
-.hero-title {
-    font-size: 52px;
-    line-height: 1.2;
-    font-weight: 700;
+/* HERO */
+.hero-section{padding:120px 0;background: linear-gradient(90deg,#eef7ff,#f9fbff);}
+.hero-illustration img{max-width:100%;height:auto}
+.stats-quick{margin-top:18px}
+.stat{background:#fff;padding:12px 16px;border-radius:10px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;align-items:flex-start}
+.stat-value{font-weight:800;font-size:1.2rem}
+.stat-label{font-size:.85rem;color:var(--muted)}
+
+/* SERVICES */
+.service-card{border-radius:14px;overflow:hidden;border:0;box-shadow:var(--card-shadow);transition:transform .25s ease}
+.service-card:hover{transform:translateY(-8px)}
+
+/* PROCESS */
+.process-card{background:#fff;padding:22px;border-radius:12px;box-shadow:var(--card-shadow);text-align:center}
+.process-icon{color:var(--primary);background:linear-gradient(180deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* GALLERY */
+.gallery-item{cursor:pointer;transition:transform .25s ease}
+.gallery-item:hover{transform:scale(1.02)}
+
+/* TESTIMONIAL */
+.testimonial{border-radius:12px;box-shadow:var(--card-shadow);border:0}
+
+/* CONTACT FOOTER */
+footer{background:#0b1220;color:#c7d0da}
+footer a{color:#c7d0da}
+.social{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border-radius:8px;color:#fff}
+.social.fb{background:#1877F2} .social.ig{background:#E4405F} .social.wa{background:#25D366}
+
+/* MODALS, LIGHTBOX */
+.modal-content{border-radius:12px}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:2000}
+.lightbox-img{max-width:90%;max-height:80%;border-radius:8px}
+.lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:34px;cursor:pointer}
+
+/* RESPONSIVE */
+@media (max-width:767px){
+  .hero-section{padding:80px 0}
+  .nav-glass{padding:.6rem 0}
 }
-
-/* Services */
-.service-card {
-    border-radius: 18px;
-    transition: 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Why Choose Us icons */
-.feature-box {
-    background: white;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-/* Contact card */
-.contact-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-/* Quick Payment */
-.payment-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-/* Footer */
-.footer {
-    background: #111827;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    margin-top: 40px;
-}
-
-
-
-
-
 
 
